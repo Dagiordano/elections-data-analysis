@@ -17,9 +17,11 @@ dic= a.to_dict('records')
 
 
 
-df = pd.DataFrame(dic)
 
-prob = df['Distrito']
-
-
-ciudades = df['Región'].value_counts()
+def export_tables_by_region(data,filename):
+    df = pd.DataFrame(data)
+    num_ciudades = df['Región'].value_counts()
+    num_ciudades_df = df.DataFrame(num_ciudades)
+    num_ciudades_df.to_csv('mesas_por_region.csv', sep=';')
+    return
+    
