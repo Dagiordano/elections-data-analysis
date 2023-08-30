@@ -24,6 +24,13 @@ def export_tables_by_region(data,filename):
     num_ciudades_df = df.DataFrame(num_ciudades)
     opciones_mesa=4
     num_ciudades_df['Región'] = num_ciudades_df['Región'].apply(lambda x: x/opciones_mesa)
-    num_ciudades_df.to_csv('mesas_por_region.csv', sep=';')
+    num_ciudades_df.to_csv(filename, sep=';')
+    return
+
+
+def export_general_results(data,filename):
+    df = pd.DataFrame(data)
+    resultados = df.groupby('Candidato')['Votos TRICEL'].sum()
+    resultados.to_csv(filename, sep=';')
     return
     
