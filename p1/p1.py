@@ -33,4 +33,14 @@ def export_general_results(data,filename):
     resultados = df.groupby('Candidato')['Votos TRICEL'].sum()
     resultados.to_csv(filename, sep=';')
     return
+
+
+def export_count_by_local(data,filename):
+    df = pd.DataFrame(data)
+    local_usuario = input("Ingrese nombre del local: ")
+    local_df = df[df['Local']== local_usuario]
+    conteo_por_local = local_df.groupby('Candidato')['Votos Tricel'].sum()
+    conteo_por_local.to_csv(filename, sep=';')
+    return
+    
     
