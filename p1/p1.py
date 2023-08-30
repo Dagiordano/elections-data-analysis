@@ -21,7 +21,7 @@ dic= a.to_dict('records')
 def export_tables_by_region(data,filename):
     df = pd.DataFrame(data)
     num_ciudades = df['Región'].value_counts()
-    num_ciudades_df = df.DataFrame(num_ciudades)
+    num_ciudades_df = pd.DataFrame(num_ciudades)
     opciones_mesa=4
     num_ciudades_df['Región'] = num_ciudades_df['Región'].apply(lambda x: x/opciones_mesa)
     num_ciudades_df.to_csv(filename, sep=';')
