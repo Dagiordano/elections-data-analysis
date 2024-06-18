@@ -1,1 +1,0 @@
-para crear una carpeta en github debo crearla y tambien un archivo, luego se borrara.
