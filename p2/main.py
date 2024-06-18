@@ -42,6 +42,8 @@ class Main(ParseOptions, CsvReader, TablesByRegionExporter, GeneralResultsExport
                 
                 local=ResultsByLocalExporter(dic,filename3)
                 local.export()
+            elif opcion == '5':
+                break
             else:
                 pass
             
